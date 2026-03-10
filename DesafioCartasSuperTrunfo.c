@@ -4,17 +4,22 @@ int main(){
 
     //Criando as variáveis da primeira carta do Super Trunfo
 
+    //tive que mudar de float para double na area do PIB, pois o valor era muito alto
+
     char estado1;
     char codigo1[10];
     char cidade1[50];
     int populacao1;
     int pontosturisticos1;
     float area1;
-    float pib1;
+    double pib1;
+    float densidadepopulacional1;
+    float pibpercapita1;
 
-    //Aqui no scanf coloquei espaço antes da %, pois estava bugando algumas perguntas e não deixando registrar a informação da carta
-    //A variavel estado1, assim como a estado2, utilizei %c, já que foi pedido um único caractere
-    //Nas veriáveis codigo1, codigo2, cidade1 e cidade2, na entrada de dados, não coloquei o & pois estava bugando no terminal, como são arrays, percebi que funcionam sem &
+    //Aqui no scanf coloquei espaço antes da %, pois estava bugando algumas perguntas e não deixando registrar a informação da carta.
+    //A variavel estado1, assim como a estado2, utilizei %c, já que foi pedido um único caractere.
+    //Nas veriáveis codigo1, codigo2, cidade1 e cidade2, na entrada de dados, não coloquei o & ...
+    //pois estava bugando no terminal, como são arrays, percebi que funcionam sem &.
 
     printf("Digite o nome do estado: \n");
     scanf(" %c", &estado1);
@@ -35,7 +40,12 @@ int main(){
     scanf(" %f", &area1);
 
     printf("Digite o PIB: \n");
-    scanf(" %f", &pib1);
+    scanf(" %lf", &pib1);
+
+    //calculando a densidade populacional e o PIB per capita
+
+    densidadepopulacional1 = (float) populacao1 / area1;
+    pibpercapita1 = (float) pib1 / populacao1;
 
     //Registrando a primeira carta
     //Na área e no PIB utilizei %.2f para definir o número de casas decimais, no caso, duas casas decimais.
@@ -46,10 +56,14 @@ int main(){
     printf("Cidade: %s\n", cidade1);
     printf("População: %d\n", populacao1);
     printf("Pontos Turísticos: %d\n", pontosturisticos1);
-    printf("Área km²: %.2f\n", area1);
+    printf("Área km²: %.1f\n", area1);
     printf("PIB: %.2f\n", pib1);
+    printf("Densidade Populacional: %.2f\n", densidadepopulacional1);
+    printf("PIB Per Capita: %.2f\n", pibpercapita1);
 
     //Criando as variáveis da segunda carta do Super Trunfo
+
+    //tive que mudar de float para double na area do PIB, pois o valor era muito alto
 
     char estado2;
     char codigo2[10];
@@ -57,9 +71,9 @@ int main(){
     int populacao2;
     int pontosturisticos2;
     float area2;
-    float pib2;
-
-
+    double pib2;
+    float densidadepopulacional2;
+    float pibpercapita2;
 
     printf("Digite o nome do estado: \n");
     scanf(" %c", &estado2);
@@ -80,7 +94,12 @@ int main(){
     scanf(" %f", &area2);
 
     printf("Digite o PIB: \n");
-    scanf(" %f", &pib2);
+    scanf(" %lf", &pib2);
+
+    //calculando a densidade populacional e o PIB per capita
+
+    densidadepopulacional2 = (float) populacao2 / area2;
+    pibpercapita2 = (float) pib2 / populacao2;
 
     //Registrando a segunda carta
 
@@ -92,6 +111,8 @@ int main(){
     printf("Pontos Turísticos: %d\n", pontosturisticos2);
     printf("Área km²: %.2f\n", area2);
     printf("PIB: %.2f\n", pib2);
+    printf("Densidade Populacional: %.2f\n", densidadepopulacional2);
+    printf("PIB Per Capita: %.2f\n", pibpercapita2);
 
     //finalizando o código com sucesso
     
